@@ -22470,8 +22470,8 @@ sub printErrorLog($)
 }
 
 sub isDump($)
-{
-    if(get_filename($_[0])=~/\A(.+)\.(abi|abidump|dump)(\.tar\.gz(\.\w+|)|\.zip|\.xml|)\Z/)
+{		# Modified to include "bdump" - binary dump.
+    if(get_filename($_[0])=~/\A(.+)\.(abi|abidump|dump|bdump)(\.tar\.gz(\.\w+|)|\.zip|\.xml|)\Z/)
     { # NOTE: name.abi.tar.gz.amd64 (dh & cdbs)
         return $1;
     }
@@ -22479,8 +22479,8 @@ sub isDump($)
 }
 
 sub isDump_U($)
-{
-    if(get_filename($_[0])=~/\A(.+)\.(abi|abidump|dump)(\.xml|)\Z/) {
+{		# Modified to include "bdump" - binary dump.
+    if(get_filename($_[0])=~/\A(.+)\.(abi|abidump|dump|bdump)(\.xml|)\Z/) {
         return $1;
     }
     return 0;
